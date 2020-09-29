@@ -1,0 +1,83 @@
+fastlane_version "2.156.1"
+fastlane_require 'dotenv'
+
+default_platform :ios
+
+before_all do
+    Dotenv.overload '../.env.default'
+end
+
+platform :ios do
+  
+  ####### PUBLIC LANES #######
+  
+  desc "Performs all actions that are required to build the application."
+  lane :setup_project do |options| 
+    
+    update_cocoapods()
+    update_certs()
+    
+  end
+  
+  desc "Builds the project and creates an .ipa. You can pass in the build_number (Default is 1)."
+  lane :build do |options|
+    
+    # Read in value in case the user has specified input params
+  	if options[:build_number]
+      increment_build_number(build_number: options[:build_number])
+    else 
+      increment_build_number(build_number: 1)
+  	end
+    
+    # Set the xcode version for building
+    if ENV['XCVERSION']
+      xcversion(version: ENV['XCVERSION'])
+    end
+    
+    # Read in value in case the user has specified input params
+    build_app(
+      export_method: "app-store",
+      clean: true,
+      disable_xcpretty: true
+    )
+
+  end
+  
+  desc "Submit a new build to Apple AppStoreConnect"
+  lane :deploy do |options|
+    
+    upload_to_testflight(
+      app_identifier: ENV['APP_ID']
+    )
+    
+  end
+
+  
+  ####### PRIVATE LANES #######
+  
+  desc "Updates cocoapods"
+  private_lane :update_cocoapods do |options|
+    
+    cocoapods(
+      clean: true
+    )
+    
+  end
+
+  desc "Updates the certificate and provisioning profiles for this project"
+  private_lane :update_certs do |options|
+    
+    match(
+      type: "development",
+      app_identifier: "net.netconomy.*",
+      force_for_new_devices: true
+    )
+    
+    match(
+      type: "appstore",
+      app_identifier: ENV['APP_ID']
+    )
+    
+  end
+  
+end
