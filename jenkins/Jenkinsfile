@@ -44,7 +44,7 @@ pipeline {
 					extensions: [], 
 					submoduleCfg: [], 
 					userRemoteConfigs: [[
-						# credentialsId: "${git_credentialId}", 
+						credentialsId: "${git_credentialId}", 
 						url: "${git_repository_url}"
 					]]
 				]) 
@@ -91,33 +91,4 @@ pipeline {
 		
 	}
 	
-	// Post action will be performed after all stages are completed.
-	/*
-	post { 
-		success { 
-			slackSend(
-				channel: "${slack_channel}",
-				color: '#00FF00',
-				message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} Success after ${currentBuild.durationString} (<${env.BUILD_URL}|Open>)"
-			)
-	    }
-		aborted {
-			slackSend(
-				channel: "${slack_channel}",
-				color: '#808080',
-				message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} Aborted after ${currentBuild.durationString} (<${env.BUILD_URL}|Open>)"
-			)
-		}
-		failure { 
-			slackSend(
-				channel: "${slack_channel}",
-				color: '#FF0000',
-				message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} Failure after ${currentBuild.durationString} (<${env.BUILD_URL}|Open>)"
-			)
-	    }
-		cleanup {
-			deleteDir()
-		}
-	}
-	*/
 }
