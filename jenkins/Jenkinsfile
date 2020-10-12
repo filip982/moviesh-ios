@@ -25,7 +25,7 @@ pipeline {
 		APPLE_CREDENTIALS 			= credentials('fastlane_apple_id')
 		FASTLANE_USER 		  	 	= "${APPLE_CREDENTIALS_USR}"
 		FASTLANE_PASSWORD 		 	= "${APPLE_CREDENTIALS_PSW}"
-		MATCH_PASSWORD 		 		  = credentials('netconomy_fastlane_match_password')
+		MATCH_PASSWORD 		 		  = credentials('fastlane_match_password')
 		MATCH_KEYCHAIN_PASSWORD = credentials('keychain_unlock_password')
 	}
 
