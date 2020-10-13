@@ -8,7 +8,7 @@
 
 
 // Global project definitions (should be changed depending on the project)
-// def git_credentialId	 	= ''
+def git_credentialId	 	= '6dad2930-d3fe-4f03-b48d-36b44124a02c'
 def git_repository_url  = 'git@github.com:filip982/moviesh-ios.git'
 def git_branch 		      = 'master'
 def dotenv_environment	= 'default'
