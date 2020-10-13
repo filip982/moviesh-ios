@@ -31,11 +31,6 @@ Builds the project and creates an .ipa. You can pass in the build_number (Defaul
 fastlane ios deploy
 ```
 Submit a new build to Apple AppStoreConnect
-### ios update_testers
-```
-fastlane ios update_testers
-```
-Updates the external testers for the 
 
 ----
 

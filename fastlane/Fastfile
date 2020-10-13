@@ -69,7 +69,7 @@ platform :ios do
     
     match(
       type: "development",
-      app_identifier: "net.netconomy.*",
+      app_identifier: "com.icabana.*",
       force_for_new_devices: true
     )
     
