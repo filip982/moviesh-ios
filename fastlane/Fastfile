@@ -69,7 +69,7 @@ platform :ios do
     
     match(
       type: "development",
-      app_identifier: "com.icabana.*",
+      app_identifier: "com.icabana.moviesh",
       force_for_new_devices: true
     )
     
