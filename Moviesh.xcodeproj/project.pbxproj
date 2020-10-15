@@ -569,8 +569,8 @@
 			baseConfigurationReference = D5D32AC450A40AAB3AA9AF4E /* Pods-Moviesh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M36HXP7J25;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KTS29DB5CZ;
 				INFOPLIST_FILE = Moviesh/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +579,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icabana.moviesh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.icabana.moviesh";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -589,8 +590,8 @@
 			baseConfigurationReference = C1EA45B864AAA57DBBF84263 /* Pods-Moviesh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M36HXP7J25;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KTS29DB5CZ;
 				INFOPLIST_FILE = Moviesh/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,6 +600,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.icabana.moviesh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.icabana.moviesh";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
